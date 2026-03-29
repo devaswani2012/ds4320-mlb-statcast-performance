@@ -242,7 +242,7 @@ erDiagram
     SEASONS ||--o{ PLAYER_SEASON_STATCAST : contains
     SEASONS ||--o{ PLAYER_SEASON_BATTING : contains
 
-    PLAYER_SEASON_STATCAST ||--|| PLAYER_SEASON_BATTING : joins_on_player_season```
+    PLAYER_SEASON_STATCAST ||--|| PLAYER_SEASON_BATTING : joins_on_player_season
 
 ---
 
