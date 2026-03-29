@@ -89,3 +89,110 @@ This project exists within the domain of sports analytics, specifically baseball
 | Barrel Rate | Defines barrel contact | https://www.mlb.com/glossary/statcast/barrel |
 | Expected Batting Average | Explains xBA metric | https://www.mlb.com/glossary/statcast/expected-batting-average |
 | Using Statcast Data to Predict Hits | Example analytical study | https://sabr.org/latest/petti-using-statcast-data-to-predict-hits/ |
+
+## Data Creation
+
+### Data Acquisition (Provenance)
+
+The data used in this project comes from MLB Statcast, which records detailed information about every pitch and batted ball during Major League Baseball games. Raw Statcast datasets for the 2018 through 2021 seasons were collected and stored as large-scale event-level datasets. These datasets include information such as exit velocity, launch angle, hit distance, pitch characteristics, and play outcomes.
+
+The raw data was stored in parquet format to improve storage efficiency and query performance. Parquet’s columnar structure allows for faster analytical queries and reduced file sizes compared to traditional CSV files, making it well-suited for large-scale sports tracking data.
+
+---
+
+### Data Processing Pipeline
+
+The data pipeline transforms raw Statcast event-level data into a structured relational dataset suitable for analysis.
+
+The main steps are:
+
+1. **Filtering**  
+   The raw data was filtered to include only batted ball events, ensuring that all observations represent balls put into play.
+
+2. **Feature Engineering**  
+   Advanced metrics were constructed at the event level, including:
+   - Exit velocity
+   - Launch angle
+   - Hit distance
+   - Expected weighted on-base average (xwOBA)
+   - Batted ball classifications (ground ball, line drive, fly ball, popup)
+
+3. **Aggregation**  
+   Event-level data was aggregated to the player-season level, producing summary statistics such as:
+   - Average exit velocity
+   - Average launch angle
+   - Average hit distance
+   - Maximum exit velocity
+   - Average xwOBA
+   - Batted ball type rates
+
+4. **Batting Statistics Construction**  
+   Traditional batting statistics were calculated from the same raw dataset, including:
+   - Plate appearances
+   - At-bats
+   - Hits
+   - Walks
+   - Strikeouts  
+   These were used to compute the dependent variable:
+   - Batting average = hits / at-bats
+
+5. **Merging**  
+   The Statcast-derived metrics were merged with batting statistics using player and season identifiers to create a unified dataset.
+
+6. **Filtering for Qualified Players**  
+   The dataset was restricted to player-seasons with:
+   - At least 100 plate appearances  
+   - At least 50 balls in play  
+   This ensures reliable and comparable observations.
+
+---
+
+### Code Table
+
+| File | Description | Link |
+|---|---|---|
+| statcast-pipeline.ipynb | Full data pipeline from raw data to final dataset | [statcast_pipeline.ipynb](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/6f7eb081d3cd1c47da2f5ad7fa037c3f03b7be4c/pipeline/statcast_pipeline.ipynb) |
+| statcast-pipeline.md | Markdown export of the pipeline notebook | [statcast_pipeline.md](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/5bc7aacfd6fc60da8a33fc308ccb7bfaf4aa3db5/pipeline/statcast_pipeline.md) |
+
+---
+
+### Bias Identification
+
+Several sources of bias may affect the dataset and analysis:
+
+- **Selection Bias**: Restricting the dataset to qualified hitters excludes players with small sample sizes, which may systematically remove certain player types.
+- **Measurement Error**: While Statcast data is highly precise, small measurement errors in tracking technology may still exist.
+- **Omitted Variable Bias**: Important factors such as defensive positioning, ballpark effects, and player speed are not included in the model.
+- **Survivorship Bias**: Only players who appear in the dataset for sufficient playing time are included.
+
+---
+
+### Bias Mitigation
+
+To address these concerns:
+
+- Minimum thresholds for plate appearances and balls in play were used to reduce noise.
+- Multiple Statcast metrics were included to better capture underlying performance.
+- The analysis is framed as predictive rather than causal to acknowledge limitations.
+- Results are interpreted with awareness of omitted variables and randomness in baseball outcomes.
+
+---
+
+### Rationale for Key Decisions
+
+Several important design decisions were made during the data construction process:
+
+- **Aggregation to Player-Season Level**  
+  This reduces noise from individual events and aligns with how performance is typically evaluated in baseball.
+
+- **Use of Statcast Metrics**  
+  Metrics such as exit velocity and xwOBA were selected because they capture the underlying quality of contact rather than just outcomes.
+
+- **Use of Batting Average as the Dependent Variable**  
+  Batting average is a widely understood statistic, making results easier to interpret while still allowing meaningful analysis.
+
+- **Use of Parquet for Raw Data Storage**  
+  Parquet improves efficiency when working with large datasets and supports scalable data processing.
+
+- **Filtering Criteria**  
+  Thresholds for plate appearances and balls in play ensure statistical reliability and reduce variance from small samples.
