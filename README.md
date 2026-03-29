@@ -38,7 +38,7 @@ markdown: https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/
 
 ### General Problem
 
-Projecting athletic performance.
+in professional baseball using player performance data.
 
 ### Specific Problem
 
