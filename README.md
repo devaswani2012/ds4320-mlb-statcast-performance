@@ -30,7 +30,7 @@ markdown: https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/
 
 ## License
 
-[MIT License]([LICENSE](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/314f9da6a361f0fa8740af2c01d8ee415c6d34a1/LICENSE))
+[MIT License](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/314f9da6a361f0fa8740af2c01d8ee415c6d34a1/LICENSE)
 
 ---
 
