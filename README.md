@@ -6,7 +6,7 @@ DS 4320 Project 1
 This project investigates whether Statcast-derived contact-quality metrics can be used to predict season-level offensive performance for MLB hitters from 2018–2021. Using pitch-level Statcast data, a relational dataset is constructed and analyzed using Python, DuckDB, SQL, and machine learning techniques.
 
 ## Name
-Kevin Gallardo
+Dev Aswani
 
 ## NetID
 [fill this in]
