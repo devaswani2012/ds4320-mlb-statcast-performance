@@ -200,49 +200,8 @@ Several important design decisions were made during the data construction proces
 ## Metadata
 
 ### Data Schema (Relational Structure)
+<img width="772" height="614" alt="Screenshot 2026-03-29 at 7 32 14 PM" src="https://github.com/user-attachments/assets/faa49f6a-bdaf-4d5f-95f5-5780f06bdaa7" />
 
-```mermaid
-erDiagram
-
-    PLAYERS {
-        int player_id PK
-        string player_name
-    }
-
-    SEASONS {
-        int season PK
-    }
-
-    PLAYER_SEASON_STATCAST {
-        int player_id FK
-        int season FK
-        float avg_exit_velocity
-        float avg_launch_angle
-        float avg_hit_distance
-        float max_exit_velocity
-        float avg_xwoba
-        float ground_ball_rate
-        float line_drive_rate
-        float fly_ball_rate
-        float popup_rate
-    }
-
-    PLAYER_SEASON_BATTING {
-        int player_id FK
-        int season FK
-        int plate_appearances
-        int at_bats
-        int hits
-        float batting_avg
-    }
-
-    PLAYERS ||--o{ PLAYER_SEASON_STATCAST : has
-    PLAYERS ||--o{ PLAYER_SEASON_BATTING : has
-
-    SEASONS ||--o{ PLAYER_SEASON_STATCAST : contains
-    SEASONS ||--o{ PLAYER_SEASON_BATTING : contains
-
-    PLAYER_SEASON_STATCAST ||--|| PLAYER_SEASON_BATTING : joins_on_player_season
 
 ---
 
