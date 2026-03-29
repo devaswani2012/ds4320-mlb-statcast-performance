@@ -196,3 +196,83 @@ Several important design decisions were made during the data construction proces
 
 - **Filtering Criteria**  
   Thresholds for plate appearances and balls in play ensure statistical reliability and reduce variance from small samples.
+
+## Metadata
+
+### Data Schema (Relational Structure)
+
+The dataset is structured as a relational model consisting of multiple tables connected by shared keys. The primary unit of analysis is the player-season, which links Statcast-derived metrics with traditional batting statistics.
+
+Relationships:
+- Each player can appear in multiple seasons
+- Each season contains multiple player observations
+- Statcast metrics and batting statistics are joined at the player-season level
+
+Primary keys and joins:
+- `player_id` identifies individual players
+- `season` identifies the year
+- Tables are joined using (`player_id`, `season`)
+
+---
+
+### Tables
+
+| Table Name | Description | Link |
+|---|---|---|
+| player_season_statcast | Aggregated Statcast metrics at the player-season level | [player_season_statcast.csv](https://myuva-my.sharepoint.com/:x:/g/personal/vzu3vu_virginia_edu/IQBxefwEd1whSamrTCaKDbx7AejbJM71MKlJnS2ZEMgf894?e=3t4dbw) |
+| player_season_batting | Traditional batting statistics at the player-season level | [player_season_batting.csv](https://myuva-my.sharepoint.com/:x:/g/personal/vzu3vu_virginia_edu/IQBJn-QnFF_aQa2VVpAr8aZzAaIxSQIy0Ti9HHn5poXxzE0?e=d1X2WU) |
+| players | Player-level identifying information | [players.csv](https://myuva-my.sharepoint.com/:x:/g/personal/vzu3vu_virginia_edu/IQC2i8ug-5dXQ7WlFoWH3KL0AdSrtlyKN1iNNjAmoplM5yk?e=0P8CyH) |
+| seasons | Season-level metadata | [seasons.csv](https://myuva-my.sharepoint.com/:x:/g/personal/vzu3vu_virginia_edu/IQCFOht94n_hSIr9fEiYFmwpARKBhu5QOWMnayySeI7P1kg?e=m17hqS) |
+
+---
+
+### Data Dictionary
+
+| Feature | Type | Description | Example | Mean | Std Dev | Min | Max |
+|---|---|---|---|---|---|---|---|
+| avg_exit_velocity | Float | Average exit velocity of batted balls (mph) | 89.5 | 88.7 | 3.2 | 75.1 | 101.3 |
+| avg_launch_angle | Float | Average launch angle (degrees) | 12.3 | 11.5 | 6.8 | -5.2 | 35.7 |
+| avg_hit_distance | Float | Average distance of batted balls (feet) | 210.4 | 205.6 | 25.4 | 140.2 | 280.3 |
+| max_exit_velocity | Float | Maximum exit velocity recorded (mph) | 112.7 | 110.2 | 3.5 | 95.0 | 120.1 |
+| avg_xwoba | Float | Expected weighted on-base average | 0.345 | 0.320 | 0.035 | 0.250 | 0.450 |
+| ground_ball_rate | Float | Proportion of ground balls | 0.42 | 0.43 | 0.08 | 0.20 | 0.65 |
+| line_drive_rate | Float | Proportion of line drives | 0.21 | 0.20 | 0.05 | 0.10 | 0.35 |
+| fly_ball_rate | Float | Proportion of fly balls | 0.30 | 0.29 | 0.07 | 0.15 | 0.50 |
+| popup_rate | Float | Proportion of popups | 0.07 | 0.08 | 0.04 | 0.01 | 0.20 |
+| plate_appearances | Integer | Total plate appearances | 540 | 350 | 180 | 100 | 720 |
+| at_bats | Integer | Total at-bats | 500 | 310 | 160 | 90 | 650 |
+| hits | Integer | Total hits | 140 | 75 | 35 | 20 | 200 |
+| batting_avg | Float | Batting average (hits / at-bats) | 0.248 | 0.246 | 0.038 | 0.117 | 0.371 |
+
+---
+
+### Uncertainty Table
+
+| Feature | Mean | Std Dev | Min | Max | Interpretation |
+|---|---|---|---|---|---|
+| avg_exit_velocity | 88.7 | 3.2 | 75.1 | 101.3 | Moderate spread; higher values indicate stronger contact |
+| avg_launch_angle | 11.5 | 6.8 | -5.2 | 35.7 | Wide variation reflects different hitting styles |
+| avg_hit_distance | 205.6 | 25.4 | 140.2 | 280.3 | Variation captures differences in power |
+| max_exit_velocity | 110.2 | 3.5 | 95.0 | 120.1 | Small spread; elite hitters cluster at high values |
+| avg_xwoba | 0.320 | 0.035 | 0.250 | 0.450 | Tight range; strong predictor of offensive performance |
+| ground_ball_rate | 0.43 | 0.08 | 0.20 | 0.65 | Reflects differences in contact tendencies |
+| line_drive_rate | 0.20 | 0.05 | 0.10 | 0.35 | Moderate variability; key for batting average |
+| fly_ball_rate | 0.29 | 0.07 | 0.15 | 0.50 | Variation reflects power vs contact profiles |
+| popup_rate | 0.08 | 0.04 | 0.01 | 0.20 | Smaller range; generally undesirable outcome |
+| batting_avg | 0.246 | 0.038 | 0.117 | 0.371 | Limited spread but influenced by randomness |
+
+---
+
+### Uncertainty Quantification
+
+Uncertainty in the dataset is reflected through the variation in key variables, as shown by their standard deviations and ranges. Metrics such as exit velocity and launch angle exhibit moderate variability across players, indicating differences in hitting profiles. Batting average shows a relatively small standard deviation, but still contains meaningful variation due to both skill and randomness.
+
+Additionally, the relationship between Statcast metrics and batting outcomes is inherently noisy. Even well-struck balls can result in outs due to defensive positioning, while weaker contact may still produce hits. This randomness contributes to uncertainty in both the data and the model’s predictions.
+
+---
+
+### Statistical Interpretation
+
+The summary statistics indicate that most hitters cluster within a relatively narrow range of performance, particularly for batting average and expected metrics such as xwOBA. However, there is meaningful variation in contact quality metrics such as exit velocity and launch angle, which suggests that these features may help explain differences in offensive performance.
+
+The spread of the data also highlights that while some players consistently produce high-quality contact, outcomes such as batting average are influenced by additional factors beyond those captured in Statcast metrics. This reinforces the idea that the model should be interpreted as capturing partial, rather than complete, explanations of hitting performance.
