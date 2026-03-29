@@ -21,12 +21,12 @@ vzu3vu
 [Press Release](docs/press_release.md)
 
 ## Data
-https://myuva-my.sharepoint.com/:f:/g/personal/vzu3vu_virginia_edu/IgAZpH3_mBmiQZ2ByJ-2xC--AWE9duXRoRg_MCKzn9I3wgc?e=0MWQWO
+[Data Folder](https://myuva-my.sharepoint.com/:f:/g/personal/vzu3vu_virginia_edu/IgAZpH3_mBmiQZ2ByJ-2xC--AWE9duXRoRg_MCKzn9I3wgc?e=0MWQWO)
 
 ## Pipeline
 
-ipynb: https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/6f7eb081d3cd1c47da2f5ad7fa037c3f03b7be4c/pipeline/statcast_pipeline.ipynb  
-markdown: https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/5bc7aacfd6fc60da8a33fc308ccb7bfaf4aa3db5/pipeline/statcast_pipeline.md
+[statcast_pipeline.ipynb](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/6f7eb081d3cd1c47da2f5ad7fa037c3f03b7be4c/pipeline/statcast_pipeline.ipynb)  
+[statcast_pipeline.md](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/5bc7aacfd6fc60da8a33fc308ccb7bfaf4aa3db5/pipeline/statcast_pipeline.md)
 
 ## License
 
