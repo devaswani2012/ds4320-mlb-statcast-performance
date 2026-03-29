@@ -26,8 +26,8 @@ vzu3vu
 
 ## Pipeline
 
-[[Notebook](pipeline/notebook.ipynb)](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/6f7eb081d3cd1c47da2f5ad7fa037c3f03b7be4c/pipeline/statcast_pipeline.ipynb)  
-[Markdown Export](pipeline/notebook.md)
+ipynb: https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/6f7eb081d3cd1c47da2f5ad7fa037c3f03b7be4c/pipeline/statcast_pipeline.ipynb  
+markdown: https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/5bc7aacfd6fc60da8a33fc308ccb7bfaf4aa3db5/pipeline/statcast_pipeline.md
 
 ## License
 
