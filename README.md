@@ -18,7 +18,7 @@ vzu3vu
 
 ## Press Release
 
-[Press Release](docs/press_release.md)
+[Press Release](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/6995046e5271d9ba60e83fde50f9df83ae2b7978/press_release.md)
 
 ## Data
 [Data Folder](https://myuva-my.sharepoint.com/:f:/g/personal/vzu3vu_virginia_edu/IgAZpH3_mBmiQZ2ByJ-2xC--AWE9duXRoRg_MCKzn9I3wgc?e=0MWQWO)
@@ -54,7 +54,7 @@ Batting average is one of the most familiar statistics in baseball, but it does 
 
 ### Headline of Press Release
 
-[Can Statcast Contact Quality Predict Batting Success?](docs/press_release.md)
+[Unlocking the Hidden Drivers of Batting Success in Major League Baseball](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/6995046e5271d9ba60e83fde50f9df83ae2b7978/press_release.md)
 
 ## Domain Exposition
 
