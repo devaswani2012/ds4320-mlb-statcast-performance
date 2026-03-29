@@ -79,7 +79,7 @@ This project exists within the domain of sports analytics, specifically baseball
 | Strikeout Rate | % of strikeouts | Measures contact ability |
 
 ### Background Reading
-https://myuva-my.sharepoint.com/:f:/g/personal/vzu3vu_virginia_edu/IgAhtNlD8aZ4S5oh0qOObAnkAY_FTPoWbtgYeBYP0iyVQSM?e=2jImb0
+[Background readings folder](https://myuva-my.sharepoint.com/:f:/g/personal/vzu3vu_virginia_edu/IgAhtNlD8aZ4S5oh0qOObAnkAY_FTPoWbtgYeBYP0iyVQSM?e=2jImb0)
 
 ### Background Reading Table
 | Title | Description | Link |
