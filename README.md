@@ -21,8 +21,7 @@ vzu3vu
 [Press Release](docs/press_release.md)
 
 ## Data
-
-[UVA OneDrive Data Folder](PASTE_YOUR_ONEDRIVE_LINK_HERE)
+https://myuva-my.sharepoint.com/:f:/g/personal/vzu3vu_virginia_edu/IgAZpH3_mBmiQZ2ByJ-2xC--AWE9duXRoRg_MCKzn9I3wgc?e=0MWQWO
 
 ## Pipeline
 
