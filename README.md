@@ -55,3 +55,37 @@ Batting average is one of the most familiar statistics in baseball, but it does 
 ### Headline of Press Release
 
 [Can Statcast Contact Quality Predict Batting Success?](docs/press_release.md)
+
+## Domain Exposition
+
+This project exists within the domain of sports analytics, specifically baseball analytics using Statcast data. Modern baseball teams rely heavily on advanced data to evaluate player performance and make strategic decisions. Systems such as Statcast track detailed information about every pitch and batted ball during MLB games, including exit velocity, launch angle, and pitch speed. These measurements allow analysts to study the underlying quality of a player’s performance rather than relying only on traditional statistics. By analyzing these advanced metrics, analysts can better understand player skill, project future performance, and identify opportunities for improvement. As a result, Statcast data has become one of the most important tools used by MLB front offices and analysts in modern baseball.
+
+### Terminology
+
+| Term | Definition | Why It Matters |
+|---|---|---|
+| Statcast | MLB’s advanced tracking system that measures player and ball movement | Provides the detailed metrics used in this project |
+| Exit Velocity | Speed of the baseball off the bat | Higher values lead to better outcomes |
+| Launch Angle | Vertical angle of the ball after contact | Determines type of batted ball |
+| Barrel | Optimal combination of exit velocity and launch angle | Strong indicator of extra-base hits |
+| Hard Hit Rate | % of balls hit ≥95 mph | Measures consistent strong contact |
+| OPS | On-base plus slugging percentage | Overall offensive production |
+| Slugging % | Total bases divided by at-bats | Measures power |
+| Batting Average | Hits divided by at-bats | Primary dependent variable |
+| Plate Appearance | A completed batting opportunity | Measures sample size |
+| xBA | Expected batting average | Removes randomness |
+| xSLG | Expected slugging | Measures expected power |
+| WAR | Wins Above Replacement | Overall player value |
+| Strikeout Rate | % of strikeouts | Measures contact ability |
+
+### Background Reading
+https://myuva-my.sharepoint.com/:f:/g/personal/vzu3vu_virginia_edu/IgAhtNlD8aZ4S5oh0qOObAnkAY_FTPoWbtgYeBYP0iyVQSM?e=2jImb0
+
+### Background Reading Table
+| Title | Description | Link |
+|---|---|---|
+| What is Statcast? | Overview of Statcast system | https://www.mlb.com/glossary/statcast |
+| Launch Angle | Explains impact of launch angle | https://www.mlb.com/glossary/statcast/launch-angle |
+| Barrel Rate | Defines barrel contact | https://www.mlb.com/glossary/statcast/barrel |
+| Expected Batting Average | Explains xBA metric | https://www.mlb.com/glossary/statcast/expected-batting-average |
+| Using Statcast Data to Predict Hits | Example analytical study | https://sabr.org/latest/petti-using-statcast-data-to-predict-hits/ |
