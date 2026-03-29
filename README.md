@@ -201,17 +201,48 @@ Several important design decisions were made during the data construction proces
 
 ### Data Schema (Relational Structure)
 
-The dataset is structured as a relational model consisting of multiple tables connected by shared keys. The primary unit of analysis is the player-season, which links Statcast-derived metrics with traditional batting statistics.
+```mermaid
+erDiagram
 
-Relationships:
-- Each player can appear in multiple seasons
-- Each season contains multiple player observations
-- Statcast metrics and batting statistics are joined at the player-season level
+    PLAYERS {
+        int player_id PK
+        string player_name
+    }
 
-Primary keys and joins:
-- `player_id` identifies individual players
-- `season` identifies the year
-- Tables are joined using (`player_id`, `season`)
+    SEASONS {
+        int season PK
+    }
+
+    PLAYER_SEASON_STATCAST {
+        int player_id FK
+        int season FK
+        float avg_exit_velocity
+        float avg_launch_angle
+        float avg_hit_distance
+        float max_exit_velocity
+        float avg_xwoba
+        float ground_ball_rate
+        float line_drive_rate
+        float fly_ball_rate
+        float popup_rate
+    }
+
+    PLAYER_SEASON_BATTING {
+        int player_id FK
+        int season FK
+        int plate_appearances
+        int at_bats
+        int hits
+        float batting_avg
+    }
+
+    PLAYERS ||--o{ PLAYER_SEASON_STATCAST : has
+    PLAYERS ||--o{ PLAYER_SEASON_BATTING : has
+
+    SEASONS ||--o{ PLAYER_SEASON_STATCAST : contains
+    SEASONS ||--o{ PLAYER_SEASON_BATTING : contains
+
+    PLAYER_SEASON_STATCAST ||--|| PLAYER_SEASON_BATTING : joins_on_player_season```
 
 ---
 
