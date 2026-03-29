@@ -9,7 +9,7 @@ This project investigates whether Statcast-derived contact-quality metrics can b
 Dev Aswani
 
 ## NetID
-[fill this in]
+vzu3vu
 
 ## DOI
 [to be added]
