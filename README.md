@@ -272,16 +272,19 @@ The spread of the data also highlights that while some players consistently prod
 ---
 
 ds4320-mlb-statcast-performance/
-├── README.md
-├── LICENSE
-├── press_release.md
-├── .gitignore
+│── README.md
+│── LICENSE
+│── press_release.md
+│── .gitignore
+│
 ├── data/
 │   └── README.md
+│
 ├── docs/
 │   ├── er_diagram.png
-│   ├── model_performance diagram.png
+│   ├── model_performance_diagram.png
 │   └── statcast_pipeline_figure.png
+│
 ├── pipeline/
 │   ├── statcast_pipeline.ipynb
 │   ├── statcast_pipeline.md
