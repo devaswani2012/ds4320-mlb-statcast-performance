@@ -84,11 +84,11 @@ This project exists within the domain of sports analytics, specifically baseball
 ### Background Reading Table
 | Title | Description | Link |
 |---|---|---|
-| What is Statcast? | Overview of Statcast system | https://www.mlb.com/glossary/statcast |
-| Launch Angle | Explains impact of launch angle | https://www.mlb.com/glossary/statcast/launch-angle |
-| Barrel Rate | Defines barrel contact | https://www.mlb.com/glossary/statcast/barrel |
-| Expected Batting Average | Explains xBA metric | https://www.mlb.com/glossary/statcast/expected-batting-average |
-| Using Statcast Data to Predict Hits | Example analytical study | https://sabr.org/latest/petti-using-statcast-data-to-predict-hits/ |
+| What is Statcast? | Overview of Statcast system | [link](https://myuva-my.sharepoint.com/:u:/g/personal/vzu3vu_virginia_edu/IQASS8MbfuWrSY-y2hPYD4j1AT8g-Ro6-z0telPAN6AgTww?e=1WT4DC) |
+| Launch Angle | Explains impact of launch angle | [link](https://myuva-my.sharepoint.com/:u:/g/personal/vzu3vu_virginia_edu/IQAZBTX4Fy1mTohDPoKoqrfeAS5eAPIE4GL4luD_kov0_O4?e=XHRvCB) |
+| Barrel Rate | Defines barrel contact | [link](https://myuva-my.sharepoint.com/:u:/g/personal/vzu3vu_virginia_edu/IQAUiLUwyPS6TKquMWmxohhUAaKSDjUgNOIg5eQy6iBJJJE?e=eVgUgF) |
+| Expected Batting Average | Explains xBA metric | [link](https://myuva-my.sharepoint.com/:u:/g/personal/vzu3vu_virginia_edu/IQDRNK6lBzN7Qpo4cEzShrX4Afd2hcU5C_aqYUZz6RkYCAc?e=bRapJw) |
+| Using Statcast Data to Predict Hits | Example analytical study | [link](https://myuva-my.sharepoint.com/:u:/g/personal/vzu3vu_virginia_edu/IQB5lMkLiUsIQY1B0OSrUPbTATI_AiaEvkuz4bUt4EOIXeo?e=grBIrJ) |
 
 ## Data Creation
 
