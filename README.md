@@ -14,7 +14,7 @@ vzu3vu
 
 ## DOI
 
-[Add Zenodo DOI here]
+[![DOI](https://zenodo.org/badge/1195554974.svg)](https://doi.org/10.5281/zenodo.19339342)
 
 ## Press Release
 
