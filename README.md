@@ -271,6 +271,7 @@ The spread of the data also highlights that while some players consistently prod
 
 ---
 
+```
 ds4320-mlb-statcast-performance/
 │── README.md
 │── LICENSE
@@ -289,3 +290,4 @@ ds4320-mlb-statcast-performance/
 │   ├── statcast_pipeline.ipynb
 │   ├── statcast_pipeline.md
 │   └── statcast_pipeline.log
+```
