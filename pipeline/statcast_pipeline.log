@@ -1,0 +1,37 @@
+2026-03-30 00:23:03,506 - INFO - Started DS 4320 Statcast pipeline notebook
+2026-03-30 00:23:29,322 - INFO - Loaded raw Statcast files: ['Statcast_2018.csv', 'Statcast_2019.csv', 'Statcast_2020.csv', 'Statcast_2021.csv']
+2026-03-30 00:23:29,325 - INFO - Combined raw dataframe shape: (1747339, 15)
+2026-03-30 00:23:29,327 - INFO - Columns retained: ['player_name', 'batter', 'events', 'bb_type', 'game_year', 'hit_distance_sc', 'launch_speed', 'launch_angle', 'estimated_woba_using_speedangle', 'woba_value', 'babip_value', 'at_bat_number', 'pitch_number', 'is_hit', 'is_ab']
+2026-03-30 00:23:52,809 - INFO - Filtered to batted-ball events: original rows=1747339, batted-ball rows=302000
+2026-03-30 00:24:02,534 - INFO - Missing launch_speed proportion: 0.014586
+2026-03-30 00:24:02,546 - INFO - Missing launch_angle proportion: 0.014825
+2026-03-30 00:24:26,040 - INFO - Created player_season_statcast table with shape (2972, 12)
+2026-03-30 00:24:26,044 - INFO - player_season_statcast columns: ['batter', 'game_year', 'balls_in_play', 'avg_exit_velocity', 'avg_launch_angle', 'avg_hit_distance', 'max_exit_velocity', 'avg_xwoba', 'ground_ball_rate', 'line_drive_rate', 'fly_ball_rate', 'popup_rate']
+2026-03-30 00:24:39,133 - INFO - Duplicate player-season keys in player_season_statcast: 0
+2026-03-30 00:25:00,009 - INFO - Created player_season_batting table with shape (3187, 9)
+2026-03-30 00:25:00,010 - INFO - player_season_batting columns: ['batter', 'game_year', 'plate_appearances', 'hits', 'at_bats', 'home_runs', 'strikeouts', 'walks', 'batting_avg']
+2026-03-30 00:25:13,461 - INFO - Duplicate player-season keys in player_season_batting: 0
+2026-03-30 00:25:34,524 - INFO - Merged Statcast and batting tables into model_df with shape (2972, 19)
+2026-03-30 00:25:45,463 - INFO - Missing values in model_df by column: {'batter': 0, 'game_year': 0, 'balls_in_play': 0, 'avg_exit_velocity': 29, 'avg_launch_angle': 29, 'avg_hit_distance': 42, 'max_exit_velocity': 29, 'avg_xwoba': 29, 'ground_ball_rate': 0, 'line_drive_rate': 0, 'fly_ball_rate': 0, 'popup_rate': 0, 'plate_appearances': 0, 'hits': 0, 'at_bats': 0, 'home_runs': 0, 'strikeouts': 0, 'walks': 0, 'batting_avg': 18}
+2026-03-30 00:25:45,473 - INFO - Summary of batting_avg in model_df: {'count': 2954.0, 'mean': 0.20697411770007085, 'std': 0.12554686119212763, 'min': 0.0, '25%': 0.15384615384615385, '50%': 0.22580645161290322, '75%': 0.26698938522354204, 'max': 1.0}
+2026-03-30 00:26:10,270 - INFO - Applied qualification filters: original model shape=(2972, 19), filtered shape=(1235, 19)
+2026-03-30 00:26:31,208 - INFO - Selected model features: ['avg_exit_velocity', 'avg_launch_angle', 'avg_hit_distance', 'max_exit_velocity', 'avg_xwoba', 'ground_ball_rate', 'line_drive_rate', 'fly_ball_rate', 'popup_rate']
+2026-03-30 00:26:31,213 - INFO - Feature matrix shape: (1235, 9); target shape: (1235,)
+2026-03-30 00:26:31,217 - INFO - Train/test split complete: X_train=(988, 9), X_test=(247, 9), y_train=(988,), y_test=(247,)
+2026-03-30 00:26:31,220 - INFO - Linear regression fitted successfully
+2026-03-30 00:26:31,224 - INFO - Model intercept: 0.23742605886155624
+2026-03-30 00:26:31,227 - INFO - Model coefficients: {'avg_exit_velocity': np.float64(0.0007755902495447524), 'avg_launch_angle': np.float64(-0.0011675780190912978), 'avg_hit_distance': np.float64(-0.0005396834027640744), 'max_exit_velocity': np.float64(-0.0003561427108325596), 'avg_xwoba': np.float64(0.24168312843033313), 'ground_ball_rate': np.float64(-0.10342662356339526), 'line_drive_rate': np.float64(0.20240530874334708), 'fly_ball_rate': np.float64(0.009837250104287803), 'popup_rate': np.float64(-0.10881593528423956)}
+2026-03-30 00:26:31,230 - INFO - Model performance: MSE=0.001289, R2=0.273740
+2026-03-30 00:26:41,872 - INFO - Coefficient table created with 9 rows
+2026-03-30 00:26:54,302 - INFO - Generated actual-vs-predicted scatter plot for model evaluation
+2026-03-30 00:27:12,964 - INFO - Created players dimension table with shape (586, 1)
+2026-03-30 00:27:22,172 - INFO - Created seasons dimension table with shape (4, 1)
+2026-03-30 00:27:32,063 - INFO - Created player_season_statcast_final table with shape (1235, 12)
+2026-03-30 00:27:42,135 - INFO - Created player_season_batting_final table with shape (1235, 9)
+2026-03-30 00:27:51,398 - INFO - Saved relational CSV tables to data/final/
+2026-03-30 00:28:00,354 - INFO - Opened DuckDB connection
+2026-03-30 00:28:11,738 - INFO - Loaded all final CSV tables into DuckDB
+2026-03-30 00:28:20,395 - INFO - DuckDB tables available: []
+2026-03-30 00:28:29,388 - INFO - Executed joined relational query; result shape: (1235, 7)
+2026-03-30 00:28:43,682 - INFO - Executed top exit velocity query; result shape: (10, 4)
+2026-03-30 00:28:43,695 - INFO - Completed DS 4320 Statcast pipeline notebook successfully
