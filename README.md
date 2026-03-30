@@ -26,7 +26,7 @@ vzu3vu
 ## Pipeline
 
 [statcast_pipeline.ipynb](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/344da71724c9cb1a013444c63bb8bae8128e4e72/pipeline/statcast_pipeline.ipynb)  
-[statcast_pipeline.md](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/5bc7aacfd6fc60da8a33fc308ccb7bfaf4aa3db5/pipeline/statcast_pipeline.md)
+[statcast_pipeline.md](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/06984a2537b7f34b36e292224ca66610e3599ec9/pipeline/statcast_pipeline.md)
 
 ## License
 
@@ -152,7 +152,7 @@ The main steps are:
 | File | Description | Link |
 |---|---|---|
 | statcast-pipeline.ipynb | Full data pipeline from raw data to final dataset | [statcast_pipeline.ipynb](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/344da71724c9cb1a013444c63bb8bae8128e4e72/pipeline/statcast_pipeline.ipynb) |
-| statcast-pipeline.md | Markdown export of the pipeline notebook | [statcast_pipeline.md](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/5bc7aacfd6fc60da8a33fc308ccb7bfaf4aa3db5/pipeline/statcast_pipeline.md) |
+| statcast-pipeline.md | Markdown export of the pipeline notebook | [statcast_pipeline.md](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/06984a2537b7f34b36e292224ca66610e3599ec9/pipeline/statcast_pipeline.md) |
 
 ---
 
