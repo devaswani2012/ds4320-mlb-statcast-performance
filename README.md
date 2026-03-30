@@ -266,3 +266,23 @@ Additionally, the relationship between Statcast metrics and batting outcomes is 
 The summary statistics indicate that most hitters cluster within a relatively narrow range of performance, particularly for batting average and expected metrics such as xwOBA. However, there is meaningful variation in contact quality metrics such as exit velocity and launch angle, which suggests that these features may help explain differences in offensive performance.
 
 The spread of the data also highlights that while some players consistently produce high-quality contact, outcomes such as batting average are influenced by additional factors beyond those captured in Statcast metrics. This reinforces the idea that the model should be interpreted as capturing partial, rather than complete, explanations of hitting performance.
+
+## Repository Structure
+
+---
+
+ds4320-mlb-statcast-performance/
+├── README.md
+├── LICENSE
+├── press_release.md
+├── .gitignore
+├── data/
+│   └── README.md
+├── docs/
+│   ├── er_diagram.png
+│   ├── model_performance diagram.png
+│   └── statcast_pipeline_figure.png
+├── pipeline/
+│   ├── statcast_pipeline.ipynb
+│   ├── statcast_pipeline.md
+│   └── statcast_pipeline.log
