@@ -145,7 +145,7 @@ The main steps are:
    - At least 50 balls in play  
    This ensures reliable and comparable observations.
 
-# Note: The data procesing and its code is in the same file as the analysis, which is [statcast_pipeline.ipynb](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/344da71724c9cb1a013444c63bb8bae8128e4e72/pipeline/statcast_pipeline.ipynb)
+**Note** The data procesing and its code is in the same file as the analysis, which is [statcast_pipeline.ipynb](https://github.com/devaswani2012/ds4320-mlb-statcast-performance/blob/344da71724c9cb1a013444c63bb8bae8128e4e72/pipeline/statcast_pipeline.ipynb)
 ---
 
 ### Code Table
